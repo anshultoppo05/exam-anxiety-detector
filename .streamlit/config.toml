@@ -1,0 +1,15 @@
+# Streamlit Cloud config
+[theme]
+primaryColor = "#667eea"
+backgroundColor = "#f0f7f4"
+secondaryBackgroundColor = "#e8f4ea"
+textColor = "#1a1a2e"
+font = "sans serif"
+
+[server]
+headless = true
+port = 8501
+enableCORS = false
+
+[browser]
+gatherUsageStats = false

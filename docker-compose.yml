@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - .:/app
+    restart: unless-stopped
+
+  streamlit:
+    build: .
+    command: streamlit run frontend/app.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    environment:
+      - API_BASE_URL=http://app:8080/api/v1
+    depends_on:
+      - app
+    restart: unless-stopped

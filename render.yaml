@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: exam-anxiety-detector-api
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: |
+      pip install -r requirements.txt
+      python -m spacy download en_core_web_sm
+      python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab'); nltk.download('stopwords'); nltk.download('wordnet'); nltk.download('vader_lexicon')"
+    startCommand: gunicorn -w 2 -b 0.0.0.0:$PORT --timeout 120 run:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: APP_API_KEY
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: GOOGLE_API_KEY
+        sync: false
