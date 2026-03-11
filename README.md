@@ -42,7 +42,7 @@ The main interface where students share their pre-exam thoughts and receive AI-p
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/exam-anxiety-detector.git
+git clone https://github.com/anshultoppo05/exam-anxiety-detector.git
 cd exam-anxiety-detector
 
 # Create virtual environment
