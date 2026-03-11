@@ -9,6 +9,8 @@ An AI-powered web application that helps students understand and manage pre-exam
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.41-red)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/anshultoppo05/exam-anxiety-detector)
+
 ---
 
 ## 🎯 Features
